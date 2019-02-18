@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.05 415.61">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        mix-blend-mode: overlay;
+      }
+    </style>
+  </defs>
+  <title>Triangulate</title>
+  <g class="cls-1">
+    <g id="Слой_1" data-name="Слой 1">
+      <polygon class="cls-2" points="338.59 0 384.05 415.61 0 245.27 338.59 0"/>
+    </g>
+  </g>
+</svg>

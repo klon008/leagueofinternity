@@ -1,0 +1,19 @@
+/* Код для подключения шрифта в /css/stylename.css */
+@mixin font-face($name, $folder , $family: $name, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $family;
+    src: url("../fonts/#{$folder}/#{$name}.eot");
+    src: url("../fonts/#{$folder}/#{$name}.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/#{$folder}/#{$name}.woff") format("woff"),
+    url("../fonts/#{$folder}/#{$name}.ttf") format("truetype");
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+@include font-face("MyriadProRegular", "MyriadPro/MyriadProRegular");
+@include font-face("MyriadProBold", "MyriadPro/MyriadProBold");
+@include font-face("MyriadProItalic", "MyriadPro/MyriadProItalic");
+@include font-face("MyriadProSemiBold", "MyriadPro/MyriadProSemiBold");
+@include font-face("MyriadProBoldItalic", "MyriadPro/MyriadProBoldItalic");
+@include font-face("MyriadProSemiBoldItalic", "MyriadPro/MyriadProSemiBoldItalic");

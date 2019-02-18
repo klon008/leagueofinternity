@@ -1,0 +1,443 @@
+@import "normalize.css";
+@import "grid12.css";
+@import "fonts";
+@import "flexbox";
+@import "transition";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+.entrance_links {
+  margin-left: auto;
+  display: block;
+  width: 100%;
+  text-align: right;
+  color: white;
+  & > a {
+    color: white;
+    font-family: "MyriadProRegular";
+  }
+}
+
+$z-index: 0;
+.top-background {
+  position: relative;
+  padding-top: 21px;
+  background-image: url(../img/top-background.png);
+  min-width: 100%;
+  -webkit-background-size: 110% auto;
+  background-size: 110% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  min-height: 1000px;
+  & > .head_container {
+    z-index: $z-index+2;
+    position: relative;
+    text-align: center;
+    margin-bottom: 5%;
+    & .wow_logo {
+      margin-top: 22px;
+    }
+  }
+  .interactive_elements {
+    top: 10vh;
+    left: 11vw;
+    position: absolute;
+    z-index: $z-index+1;
+  }
+  & > .container {
+    z-index: $z-index+2;
+    position: relative;
+  }
+}
+
+.site-title-block {
+  h1 {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 10px #fff,
+    1px 1px 10px #ccc,
+    0 0 5.3px rgb(33, 0, 73),
+    0 0 6px rgb(33, 0, 73),
+    0 0 7px rgb(33, 0, 73),
+    0 0 8px rgb(33, 0, 73),
+    0 0 9px rgb(33, 0, 73),
+    0 0 10px rgb(33, 0, 73),
+    0 0 11px rgb(33, 0, 73),
+    0 0 12px rgb(33, 0, 73),
+    0 0 13px rgb(33, 0, 73);
+  }
+}
+
+.triangulate {
+  display: none;
+}
+
+@supports (mix-blend-mode:multiply) {
+  .triangulate {
+    display: block;
+    position: absolute;
+    mix-blend-mode: overlay;
+    width: 474px;
+    left: 50%;
+    margin-left: -282px;
+    z-index: 2;
+    top: 146px;
+  }
+}
+
+.navbar-nav {
+  padding: 0;
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(stretch);
+  background-image: url("../img/nav_background.png");
+  margin: 0;
+  border-radius: 5px;
+  & > .nav-item:not(:last-child) {
+    background-image: url('../img/border_right.png');
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+}
+
+.nav-item {
+  list-style: none;
+  width: (100% / 6);
+  height: 72px;
+  text-align: center;
+  line-height: 72px;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  font-size: 16px;
+  font-family: "MyriadProRegular";
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
+  &:hover {
+    background-color: rgba(222, 222, 222, 0.03);
+  }
+}
+
+.content_container {
+  padding: 4px;
+  background-image: url("../img/content_bg.png");
+  border-radius: 5px;
+  box-shadow: 0px 5px 9.3px 0.7px black;
+}
+
+/** Raid Time Block Widget **/
+.first-block-widget {
+  margin: 5px 4px;
+  width: auto;
+  min-height: 600px;
+  background-image: url("../img/tomb_of_sargeras_03.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 2px 6.9671px 0.0329px black;
+}
+
+.rt_times {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(stretch);
+}
+
+.rt_widget > h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 47px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 11%;
+}
+
+.rt_time_el {
+  margin: 0 2%;
+  text-align: center;
+}
+
+.rt_number {
+  position: relative;
+  z-index: $z-index + 2;
+  font-size: 56px;
+  line-height: 1.6;
+  font-family: "Roboto";
+}
+
+.time_name {
+  font-family: "Roboto";
+  font-weight: 300;
+  margin-bottom: 5%;
+}
+
+.parallelogram {
+  width: 150px;
+  height: 100px;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: skew(340deg);
+    -moz-transform: skew(340deg);
+    -o-transform: skew(340deg);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: $z-index + 1;
+  }
+}
+
+.rt_btn_overlay {
+  width: 100%;
+  text-align: center;
+}
+
+.rt_btn {
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  margin-top: 5%;
+  background-color: rgba(0, 0, 0, .3);
+  border: 1px solid white;
+  width: auto;
+  padding: 24px;
+  font-family: "Roboto";
+  font-weight: 100;
+  text-align: center;
+  margin-left: auto;
+  margin-left: auto;
+  text-decoration: none;
+  @include transition(all ease 0.7s);
+  &:hover {
+    background-color: rgba(0, 0, 0, .7);
+  }
+}
+
+/***** ADS *****/
+.ads {
+  text-align: center;
+  &>img{
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+.latest_news {
+  padding-left: 56px;
+  padding-right: 56px;
+  & > h1 {
+    margin-top: 51px;
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  & > article {
+    h2 {
+      margin-top: 30px;
+      font-size: 24px;
+      font-family: "Roboto";
+      color: rgb(255, 255, 255);
+    }
+    .post_description {
+      font-size: 12px;
+      font-family: "Roboto";
+      color: rgb(255, 255, 255);
+      line-height: 1.2;
+      margin-bottom: 37px;
+    }
+    .videoWrapper {
+      width: 80%;
+      margin: 25px auto 48px;
+    }
+    .imgWrapper {
+      width: 80%;
+      margin: 25px auto 48px;
+      img {
+        width: 100%;
+      }
+    }
+    .videoWrapper iframe {
+      width: 100%;
+      height: 100%;
+    }
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 60%;
+      margin: 1% auto;
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.read-more {
+  font-size: 10px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  background-color: #0c0a0c;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4.55px 0.45px rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+}
+
+.post_text {
+  font-size: 16px;
+  font-family: "Arial";
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 2.5em;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+ul.breadcrumb {
+  padding: 10px 56px;
+  list-style: none;
+  background-color: transparent;
+  li {
+    display: inline;
+    font-size: 18px;
+    + li:before {
+      padding: 8px;
+      color: white;
+      content: "/\00a0";
+    }
+    a {
+      color: #0275d8;
+      text-decoration: none;
+      &:hover {
+        color: #01447e;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Форма Опроса */
+.poll {
+  margin-top: 4em;
+  max-width: 746px;
+  .page_poll_radio {
+    margin: 3em 0;
+  }
+  .label_text, .label_num {
+    font-size: 16px;
+    font-family: "Arial";
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+    text-align: left;
+    margin-top: -30px;
+  }
+  .label_text {
+    float: left;
+  }
+  .label_num {
+    float: right;
+  }
+  .poll_progress {
+    background: #30a896;
+    height: 15px;
+    display: block;
+  }
+  .page_poll_bottom {
+    margin-bottom: 2em;
+  }
+}
+
+.latest_news_footer {
+  margin: 32px 0;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Roboto";
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.2;
+  .users_online {
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    text-align: center;
+    text-transform: none;
+    font-weight: 100;
+  }
+}
+.bottom-background{
+  background-image: url(../img/neon_void.png);
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  min-height: 1000px;
+  z-index: -1;
+  overflow: hidden;
+  img{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -105px;
+  }
+}
+footer {
+  margin-top: 231px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Arial";
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+}
+.discord_logo{
+  width: 2.3em;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 0.5em;
+}
